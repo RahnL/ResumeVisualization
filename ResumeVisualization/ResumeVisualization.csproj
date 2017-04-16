@@ -58,8 +58,12 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ResumeVisualization.html" />
+    <Content Include="index.html" />
+    <Content Include="sandbox.html" />
+    <Content Include="style.css" />
+    <Content Include="treevisualization1.html" />
     <None Include="mikedata.csv" />
+    <Content Include="bubble.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -67,6 +71,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="rahndata.csv" />
+    <Content Include="rahndata.json" />
+    <Content Include="rahnbubble.csv" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

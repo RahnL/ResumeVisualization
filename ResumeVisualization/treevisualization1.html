@@ -2,42 +2,24 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-
     <title>Visualized Resume</title>
-
-    <style>
-        .node circle {
-            fill: #fff;
-            stroke: green;
-            stroke-width: 3px;
-        }
-
-        .node text {
-            font: 10px sans-serif;
-        }
-
-        .link {
-            fill: none;
-            stroke: #cab;
-            stroke-width: 4px;
-        }
-    </style>
-
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <script src="http://d3js.org/d3.v3.min.js"></script>
-    <div>
+    <!--<div>
         <select id="personChoice" onchange="location.reload()">
             <option value="rahndata.csv">Rahn</option>
             <option value="mikedata.csv">Mike</option>
         </select>
-    </div>
+    </div>-->
     <script>
-        var selected = document.getElementById("personChoice");
-        console.log(selected);
         var dataFile = "rahndata.csv";
-        if (selected == 2) { dataFile = "mikedata.csv"; }
+
+        //var selected = document.getElementById("personChoice");
+        //console.log(selected);
+        //if (selected == 2) { dataFile = "mikedata.csv"; }
 
         // setup
         var margin = { top: 20, right: 40, bottom: 20, left: 20 },
@@ -59,7 +41,7 @@
             .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 
-        var numLayers = 6; //How deep is our tree?
+        var numLayers = 7; //How deep is our tree?
 
         // load the external data
         d3.csv(dataFile, function (error, data) {
