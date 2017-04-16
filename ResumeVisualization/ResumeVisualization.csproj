@@ -59,13 +59,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ResumeVisualization.html" />
+    <None Include="mikedata.csv" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="rahn.json" />
+    <Content Include="rahndata.csv" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

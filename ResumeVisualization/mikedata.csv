@@ -1,0 +1,10 @@
+﻿name,parent
+school,mike
+mike,null
+SMU,school
+Work,mike
+Data Science,SMU
+Statistics,Data Science
+Python,Data Science
+Visualization,Data Science
+AirplanesRUs,Work

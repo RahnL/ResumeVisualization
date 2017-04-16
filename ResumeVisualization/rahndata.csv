@@ -1,0 +1,19 @@
+﻿name,parent
+school,rahn
+rahn,null
+UW,school
+SMU,school
+Work,rahn
+CHC,Work
+Boeing,Work
+Mathematics,UW
+Data Science,SMU
+C#,CHC
+SQL,CHC
+Statistics,Data Science
+Python,Data Science
+Visualization,Data Science
+Microsoft,Work
+Testing,Microsoft
+Premera,Work
+Thinking,Premera

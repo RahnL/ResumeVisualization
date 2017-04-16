@@ -3,42 +3,36 @@
 <head>
     <meta charset="utf-8">
 
-    <title>Birth-Assassination Tree Sample</title>
+    <title>Visualized Resume</title>
 
     <style>
         .node circle {
             fill: #fff;
-            stroke: steelblue;
-            stroke-width: 5px;
+            stroke: green;
+            stroke-width: 3px;
         }
 
         .node text {
-            font: 12px sans-serif;
+            font: 10px sans-serif;
         }
 
         .link {
             fill: none;
-            stroke: #ccc;
-            stroke-width: 6px;
+            stroke: #cab;
+            stroke-width: 4px;
         }
     </style>
 
 </head>
 
 <body>
-
-    <h2>
-         Resume Visualization
-    </h2>
-
-    <!-- load the d3.js library -->
     <script src="http://d3js.org/d3.v3.min.js"></script>
 
     <script>
 
-        // ************** Generate the tree diagram	 *****************
-        var margin = { top: 20, right: 100, bottom: 20, left: 100 },
-            width = 1200 - margin.right - margin.left,
+        // setup
+        var margin = { top: 20, right: 40, bottom: 20, left: 20 },
+            width = 960 - margin.right - margin.left,
             height = 500 - margin.top - margin.bottom;
 
         var i = 0;
@@ -52,11 +46,37 @@
         var svg = d3.select("body").append("svg")
             .attr("width", width + margin.right + margin.left)
             .attr("height", height + margin.top + margin.bottom)
-          .append("g")
+            .append("g")
             .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
+
+        var numLayers = 6; //How deep is our tree?
+
         // load the external data
-        d3.json("rahn.json", function (error, treeData) {
+        d3.csv("treedata.csv", function (error, data) {
+
+            // *********** Convert flat data into a nice tree ***************
+            // Courtesy of d3noob's samples
+            // create a name: node map
+            var dataMap = data.reduce(function (map, node) {
+                map[node.name] = node;
+                return map;
+            }, {});
+
+            // create the tree array
+            var treeData = [];
+            data.forEach(function (node) {
+                // add to parent
+                var parent = dataMap[node.parent];
+                if (parent) {
+                    // create child array if it doesn't exist
+                    (parent.children || (parent.children = []))
+                        .push(node); // add node to child array
+                } else {
+                    treeData.push(node);
+                }
+            });
+
             root = treeData[0];
             update(root);
         });
@@ -64,13 +84,13 @@
         function update(source) {
 
             // Compute the new tree layout.
-            var nodes = tree.nodes(root),
+            var nodes = tree.nodes(root).reverse(),
                 links = tree.links(nodes);
 
-            // Normalize for fixed-depth.
-            nodes.forEach(function (d) { d.y = d.depth * d.rad * 110; });
+            // Normalize for number of layers deep (5).
+            nodes.forEach(function (d) { d.y = d.depth * (width / numLayers); });
 
-            // Declare the nodes…
+            // Declare the nodes
             var node = svg.selectAll("g.node")
                 .data(nodes, function (d) { return d.id || (d.id = ++i); });
 
@@ -82,15 +102,15 @@
                 });
 
             nodeEnter.append("circle")
-                 .attr("r", function (d) {
-                     return d.rad * 10;
-                 })
-               //.attr("r", 10)
-               .style("fill", "#fff");
+                .attr("r", 10)
+                //.attr("r", function (d) {
+                //    return d.rad * 10;
+                //})
+                .style("fill", "#fff");
 
             nodeEnter.append("text")
                 .attr("x", function (d) {
-                    return d.children || d._children ? -40 : 40;
+                    return d.children || d._children ? -10 : 10;
                 })
                 .attr("dy", "1.5em")
                 .attr("text-anchor", function (d) {
@@ -99,7 +119,7 @@
                 .text(function (d) { return d.name; })
                 .style("fill-opacity", 1);
 
-            // Declare the links…
+            // Declare the linksâ€¦
             var link = svg.selectAll("path.link")
                 .data(links, function (d) { return d.target.id; });
 
