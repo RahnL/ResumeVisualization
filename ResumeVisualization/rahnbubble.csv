@@ -1,22 +1,22 @@
-﻿id,value
-rahn,10000
-rahn.school,5000
-rahn.school.smu,4000
-rahn.school.smu.datascience,2750
-rahn.school.smu.datascience.statistics,500
-rahn.school.smu.datascience.visualization,500
-rahn.school.smu.datascience.programming,500
-rahn.school.uw,3500
-rahn.school.uw.mathematics,2500
-rahn.school.uw.mathematics.calculus,500
-rahn.school.uw.mathematics.algebra,500
-rahn.work,5000
-rahn.work.chc,4000
-rahn.work.chc.sql,400
-rahn.work.chc.c#,400
-rahn.work.chc.EDI,400
-rahn.work.premera,4000
-rahn.work.premera.analysis,500
-rahn.work.microsoft,3000
-rahn.work.microsoft.testing,300
-rahn.work.microsoft.server,300
+﻿id,rad,note
+rahn,900,I am Rahn!
+rahn.school,700,I have an education
+rahn.school.smu,350,I went to SMU in 2016-2017
+rahn.school.smu.datascience,100,What data?
+rahn.school.smu.datascience.statistics,100,Go T-Test!
+rahn.school.smu.datascience.visualization,100,what's that?
+rahn.school.smu.datascience.programming,100,I dunno how to do this
+rahn.school.uw,3500,Go Huskies
+rahn.school.uw.mathematics,2500,
+rahn.school.uw.mathematics.calculus,500,
+rahn.school.uw.mathematics.algebra,500,
+rahn.work,5000,My Work History
+rahn.work.chc,4000,I drink a lot of coffee
+rahn.work.chc.sql,400,
+rahn.work.chc.c#,400,
+rahn.work.chc.EDI,400,
+rahn.work.premera,4000,I drank more coffee here
+rahn.work.premera.analysis,500,
+rahn.work.microsoft,3000,We had free coffee
+rahn.work.microsoft.testing,300,
+rahn.work.microsoft.server,300,

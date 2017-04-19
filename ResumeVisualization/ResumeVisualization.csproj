@@ -62,6 +62,7 @@
     <Content Include="sandbox.html" />
     <Content Include="style.css" />
     <Content Include="treevisualization1.html" />
+    <Content Include="data.json" />
     <None Include="mikedata.csv" />
     <Content Include="bubble.html" />
     <Content Include="Web.config" />

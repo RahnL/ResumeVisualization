@@ -1,0 +1,45 @@
+﻿{
+  "name": "Mike",
+  "value": 75,
+  "childres": [
+    {
+      {
+        "name": "bob",
+        "value": 25
+      },
+      {
+        "name": "mary",
+        "value": 25
+      },
+      {
+        "name": "suzy",
+        "value": 25
+      }
+      ]
+    },
+    {
+      "name": "Fred",
+      "value": 75,
+      "childres": [
+        {
+          {
+            "name": "joe",
+            "value": 25
+          },
+          {
+            "name": "sue",
+            "value": 25
+          },
+          {
+            "name": "bill",
+            "value": 25
+          }
+        }
+      ]
+    },
+    {
+      "name": "Mr. X",
+      "value": 75
+    }
+  ]
+}
